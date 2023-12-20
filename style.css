@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.bodies{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 90;
+}
+section#banner{
+    position: relative;
+    overflow: hidden;
+    z-index: 80;
+    padding: 0;
+    background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,15,121,1) 35%, rgba(0,212,255,1) 100%);
+    h1{
+        position: relative;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 200%;
+        opacity: 1;
+        z-index: 99;
+        text-align: center;
+        color: white;
+    }
+}
+#planet1 {
+  background-image: url(sprites/planet1.gif);
+  height: 275px;
+  width: 275px;
+  position: absolute;
+  animation: planet1grow 100s infinite;
+  opacity: 0.75;
+}
+
+#planet2 {
+  background-image: url(sprites/planet2.gif);
+  height: 300px;
+  width: 300px;
+  animation: planet2motion 50s linear infinite;
+  opacity: 0.75;
+}
+
+#galaxy {
+    background-image: url(sprites/galaxy.gif);
+    height:300px;
+    width: 225px;
+    animation: galaxymotion 35s linear infinite;
+}
+
+#blackhole {
+    background-image: url(sprites/blackhole.gif);
+    height: 300px;
+    width: 300px;
+    animation: blackholemotion 35s linear infinite;
+
+}
+
+@keyframes planet1grow {
+    0% {transform: scale(1);}
+    100% {transform: scale(3.5);}
+}
+@keyframes planet2motion {
+    0% { transform:translate(100vw, -50vw) rotate(0deg);}
+    100% { transform:translate(50vw,90vw) rotate(180deg);}
+}
+@keyframes blackholemotion {
+    0% {transform: translate(50vw, -60vw);}
+    100% { transform: translate(90vw, 40vw);}
+}
+@keyframes galaxymotion {
+    0% { transform: translate(70vw, -70vw) skew(0deg);}
+    100% { transform: translate(80vw, 10vw) skew(50deg);}
+}
